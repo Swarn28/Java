@@ -4,27 +4,30 @@ public class PrintSubArrayWithGivenSum {
 
     public static void main(String[] args) {
         int[] arr = {1,4,0,0,3,10,5};
-        int num = 19;
-        int i=0, j=0;
+        //int[] arr = {1,4,20,3,10,5};
+        int num = 2;
+        int i=0, j=1;
         int currSUm = arr[0];
-        while(i<arr.length && j<arr.length){
+        boolean keepRunning = true;
+        while(keepRunning){
 
-            while(currSUm < num){
-                if(j<arr.length-1) {
-                    j++;
-                    currSUm = currSUm + arr[j];
+            if (currSUm < num){
+                if(j>=arr.length) {
+                    System.out.println("not found... ");
+                    return;
                 }
+                currSUm = currSUm + arr[j];
+                j++;
             }
 
-            while(currSUm > num){
-                if(i<arr.length-1) {
+            else if(currSUm > num){
                     currSUm = currSUm - arr[i];
                     i++;
-                }
             }
 
-            if(currSUm == num){
-                System.out.println("Sub array is between " + i + " and " + j);
+            else if(currSUm == num){
+                keepRunning = false;
+                System.out.println("Sub array is between " + i + " and " + (j-1));
                 return;
             }
 
