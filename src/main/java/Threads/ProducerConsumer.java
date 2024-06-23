@@ -2,6 +2,8 @@ package Threads;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ProducerConsumer {
 
@@ -39,6 +41,7 @@ public class ProducerConsumer {
             synchronized (this) {
                 if (list.size() == 0) {
                     try {
+                        System.out.println("Consumer is waiting...");
                         wait();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -61,6 +64,13 @@ public class ProducerConsumer {
 
         ProducerConsumer pc = new ProducerConsumer();
 
+        //ExecuteByNormalWay(pc);
+
+        ExecuteByExecutorService(pc);
+    }
+
+    private static void ExecuteByNormalWay(ProducerConsumer pc) {
+        System.out.println("Doing by normal way...");
         Thread t1 = new Thread(() -> {
             pc.producer();
         });
@@ -79,6 +89,23 @@ public class ProducerConsumer {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void ExecuteByExecutorService(ProducerConsumer pc) {
+
+        System.out.println("Doing by ExecutorService way...");
+
+        ExecutorService exec = Executors.newFixedThreadPool(2);
+
+        exec.execute(() -> {
+            pc.producer();
+        });
+
+        exec.execute(() -> {
+            pc.consumer();
+        });
+
+        exec.shutdown();
     }
 
 }
