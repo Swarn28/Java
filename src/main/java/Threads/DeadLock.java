@@ -10,25 +10,25 @@ public class DeadLock {
         Object A = new Object();
         Object B = new Object();
 
-        Thread t1 = new Thread(() -> {
-            synchronized (A){
-                try {
-                    System.out.println("Inside T1, A Lock....");
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-
-                synchronized (B){
+            Thread t1 = new Thread(() -> {
+                synchronized (A){
                     try {
-                        System.out.println("Inside T1, B Lock....");
+                        System.out.println("Inside T1, A Lock....");
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
+
+                    synchronized (B){
+                        try {
+                            System.out.println("Inside T1, B Lock....");
+                            Thread.sleep(500);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                 }
-            }
-        });
+            });
 
         Thread t2 = new Thread(() -> {
             synchronized (B){
