@@ -19,6 +19,7 @@ public class MergeSortedLinkedList {
         Node first_2 = new Node(24);
         Node second_2 = new Node(57);
         Node third_2 = new Node(69);
+        Node fourth_2 = new Node(78);
         secondList.addNode(first_2);
         secondList.addNode(second_2);
         secondList.addNode(third_2);

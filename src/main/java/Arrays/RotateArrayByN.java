@@ -26,8 +26,8 @@ public class RotateArrayByN {
         // keep this function call here
         Scanner s = new Scanner(System.in);
         //  System.out.print(ArrayChallenge(s.nextLine()));
-
-        int[] rotatedArr = (ArrayChallenge();
+        int[] arr = {2,4,2,1};
+        int[] rotatedArr = ArrayChallenge(arr);
 
         for(int i = 0 ;i< rotatedArr.length ; i++){
             System.out.println(rotatedArr[i]);
