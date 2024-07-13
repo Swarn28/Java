@@ -1,5 +1,6 @@
 package Arrays;
 
+/*Find subarray with max sum from a given array. Return the max sum*/
 public class FindMaxSubarray {
 
     public static void main(String[] args) {
@@ -8,8 +9,7 @@ public class FindMaxSubarray {
         int overAllMax = Integer.MIN_VALUE;
         int start=0;
         int end =0;
-        int max_so_far = Integer.MIN_VALUE, max_ending_here
-                = 0;
+
         int size = arr1.length;
 
         for(int i=0;i< size; i++){
