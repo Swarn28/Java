@@ -1,5 +1,7 @@
 package Sorting;
 
+
+// https://www.youtube.com/watch?v=bOk35XmHPKs&t=319s
 public class MergeSort {
 
     public static void main(String[] args) {
@@ -47,6 +49,9 @@ public class MergeSort {
     }
 
     public static int[] sortAndJoin(int[] leftArray,int[] rightArray, int[] arr){
+        /*
+        * i is to track leftArray, j is to track rightArray, and k is to keep track of main array.
+        * */
         int i=0, j=0,k=0;
 
         while(i< leftArray.length && j < rightArray.length){
@@ -54,15 +59,16 @@ public class MergeSort {
             if(leftArray[i] < rightArray[j]){
                 arr[k] = leftArray[i];
                 i++;
-                k++;
             }
             else{
                 arr[k] = rightArray[j];
                 j++;
-                k++;
             }
+            k++;
         }
 
+        /*if i is greater leftArray length. Which means all the elements of leftArray has been
+        added to the main array. Now we need to copy all elements of righ array to the main array.*/
         if(i>=leftArray.length){
             for(int m = j; j<rightArray.length ; j++){
                 arr[k] = rightArray[j];
