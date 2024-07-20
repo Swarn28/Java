@@ -1,3 +1,5 @@
+package Arrays;
+
 public class PrintSubArrayWithGivenSum {
 
     public static void main(String[] args) {
