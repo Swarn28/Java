@@ -5,7 +5,7 @@ public class PrintSubArrayWithGivenSum {
     public static void main(String[] args) {
         int[] arr = {1,4,0,0,3,10,5};
         //int[] arr = {1,4,20,3,10,5};
-        int num = 2;
+        int num = 14;
         int i=0, j=1;
         int currSUm = arr[0];
         boolean keepRunning = true;
@@ -32,8 +32,6 @@ public class PrintSubArrayWithGivenSum {
             }
 
         }
-
-        System.out.printf("no subArray found");
     }
 
 }

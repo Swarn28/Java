@@ -90,7 +90,8 @@ public class CheckPalindrome {
     }
 
 
-    public boolean compareLists(Node leftHead, Node rightHead, int middleItem, int len) {
+    public boolean compareLists(Node leftHead, Node rightHead,
+                                int middleItem, int len) {
         int count = 0;
 
         while (leftHead != null && rightHead != null) {

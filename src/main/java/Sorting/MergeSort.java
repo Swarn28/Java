@@ -67,8 +67,8 @@ public class MergeSort {
             k++;
         }
 
-        /*if i is greater leftArray length. Which means all the elements of leftArray has been
-        added to the main array. Now we need to copy all elements of righ array to the main array.*/
+        /*if i is greater than leftArray length. Which means all the elements of leftArray has been
+        added to the main array. Now we need to copy all elements of right array to the main array.*/
         if(i>=leftArray.length){
             for(int m = j; j<rightArray.length ; j++){
                 arr[k] = rightArray[j];
