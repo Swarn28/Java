@@ -2,6 +2,7 @@ import ChildParent.ChildTwo;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class Main  {
@@ -16,6 +17,5 @@ public class Main  {
         setChild.add(c2);
 
         System.out.println("size of set is : "+setChild.size());
-
     }
 }

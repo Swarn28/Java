@@ -1,4 +1,4 @@
-package TemplatePattern;
+package designPattern.TemplatePattern;
 
 public class Tea extends Bevarages {
     @Override
