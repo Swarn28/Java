@@ -7,7 +7,7 @@ public class File_Read {
 
     public static void main(String[] args) {
         File_Read fileread = new File_Read();
-        String fileName =
+        String fileName = "";
 
     }
 }
