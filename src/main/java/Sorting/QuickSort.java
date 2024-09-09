@@ -34,8 +34,8 @@ public class QuickSort {
    }
 
     public static void main(String[] args) {
-        int[] arr = {4,1,9,2,7,5};
-
+       // int[] arr = {4,1,9,2,7,5};
+        int[] arr = {1,8,3,9,4,5,7};
         int low =0 ;
         int high = arr.length-1;
         QuickSort qs = new QuickSort();
