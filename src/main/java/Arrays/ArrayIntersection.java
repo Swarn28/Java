@@ -1,17 +1,22 @@
 package Arrays;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
+/*
+*
+* This code is used to find intersection of the 2 arrays.
+*
+* */
 public class ArrayIntersection {
 
 
     public static void main(String[] args) {
-        int[] first = {4,9,5};
-        int[] second = {9,4,9,8,4};
+        int[] first = {4,9,9,5};
+        int[] second = {9,4,9,8,4,5,6};
+
+        // Set can be used if we want to remove duplicates from the output.
         Set<Integer> setInt = new HashSet<>();
+        List<Integer> listInt = new ArrayList<>();
 
         Map<Integer, Integer> mapCount = new HashMap<>();
 
@@ -28,7 +33,7 @@ public class ArrayIntersection {
         for(Integer num: second){
             if(mapCount.containsKey(num)){
                 mapCount.put(num,mapCount.get(num)-1);
-                setInt.add(num);
+                listInt.add(num);
             }
 
             else{
@@ -38,7 +43,7 @@ public class ArrayIntersection {
 
        // mapCount.forEach((k,v) -> checkEven(k,v));
 
-        setInt.forEach(s-> System.out.println(s));
+        listInt.forEach(s-> System.out.println(s));
 
     }
 

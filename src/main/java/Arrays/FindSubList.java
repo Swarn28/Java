@@ -10,12 +10,10 @@ of the sublist in the master list*/
 public class FindSubList {
 
     public static void main(String[] args) {
-        List<Integer> masterList = new ArrayList<>();
-        List<Integer> subList = new ArrayList<>();
+        List<Integer> masterList =  Arrays.asList(23,45,12,5,12,5,7,1,23,56,23,11,21,23,22,11,46,7,3);
+        List<Integer> subList = Arrays.asList(12,5,7,1);
         List<Integer> newList = new ArrayList<>();
 
-        masterList = Arrays.asList(23,45,12,5,12,5,7,1,23,56,23,11,21,23,22,11,46,7,3);
-        subList = Arrays.asList(12,5,7,1);
         int len = subList.size();
         int matchCount = 0;
 
