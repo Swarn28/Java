@@ -25,7 +25,7 @@ public class BuySellInfiniteTransactionsAllowed {
             }
             lMax = arr[i];
 
-            result = result + lMax - lMin;
+            result = result + (lMax - lMin);
 
         }
 
