@@ -42,7 +42,7 @@ public class ProducerConsumer {
                 if (list.size() == 0) {
                     try {
                         System.out.println("Consumer is waiting...");
-                        wait();
+                        wait(); 
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
