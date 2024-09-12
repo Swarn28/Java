@@ -21,7 +21,7 @@ public class InsertInSortedLL {
         list.addNode(sixth);
         list.addNode(seventh);
 
-        head = InsertInSortedLL.insert(head, new Node(1));
+        head = InsertInSortedLL.insert(head, new Node(89));
 
         list.printList(head);
     }
