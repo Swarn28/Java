@@ -18,12 +18,12 @@ public class ProducerConsumer {
             synchronized (this) {
                 try {
                     while (list.size() == capacity) {
-                        System.out.println("Producer is waiting...");
+                        System.out.println("Producer is waiting... thread name is: " + Thread.currentThread());
                         wait();
                     }
                     counter++;
                     list.add(counter);
-                    System.out.println("Added number to list: " + counter);
+                    System.out.println("Added number to list: " + counter +" thread name is: " + Thread.currentThread());
                     notify();
                     Thread.sleep(1000);
                     // System.out.println("Producer Resumed...");
@@ -41,14 +41,14 @@ public class ProducerConsumer {
             synchronized (this) {
                 if (list.size() == 0) {
                     try {
-                        System.out.println("Consumer is waiting...");
+                        System.out.println("Consumer is waiting... thread name is:" + Thread.currentThread());
                         wait();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
                 int num = list.remove(i);
-                System.out.println("Removed number: " + num);
+                System.out.println("Removed number: " + num + " thread name is: " + Thread.currentThread());
                 notify();
                 try {
                     Thread.sleep(1000);

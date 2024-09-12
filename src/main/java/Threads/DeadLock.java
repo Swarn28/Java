@@ -1,6 +1,6 @@
 package Threads;
 
-// In this example thread deadlock has occured because the nested synchronised blocks of each thread are in different orders.
+// In this example thread deadlock has occurred because the nested synchronised blocks of each thread are in different orders.
 // If we want to remove the deadlock the order of accessing the locks must be same for nested synchronised in 2 threads.
 
 
