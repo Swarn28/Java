@@ -4,7 +4,7 @@ public class FindTriplet {
 
     /*
     * Given an array find 3 consecutive numbers which have max sum. Medium difficult.
-    *
+    * ASked in Spice Money interview
     * */
 
     public static void main(String[] args) {
