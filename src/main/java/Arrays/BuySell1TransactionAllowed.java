@@ -8,7 +8,8 @@ package Arrays;
 *   In the second traversal find the max number from the position of the minimum number. In this way you get the min and max in the array.
 *   Subtract min and max.(my way)
 *
-* Solution 2 -> This takes one traversal only, find the min in the arra y. For each minimum calculate the difference with each array element.
+* Solution 2 -> This takes one traversal only, find the min in the array.
+* For each minimum calculate the difference with each array element.
 *   If the difference increases replace the result.(GeeksForGeeks way)
 *
 *
