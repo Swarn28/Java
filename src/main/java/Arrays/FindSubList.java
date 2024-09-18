@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 /*You are given a master array list and a sub list. You need to find the starting index
-of the sublist in the master list*/
+of the sublist in the master list and tell whether a sublist consists in the master list.*/
 public class FindSubList {
 
     public static void main(String[] args) {
