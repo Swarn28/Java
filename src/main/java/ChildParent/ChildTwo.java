@@ -12,6 +12,8 @@ public class ChildTwo extends Parent{
         this.name = name;
     }
 
+    public ChildTwo(){}
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,5 +41,13 @@ public class ChildTwo extends Parent{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void go(){
+        System.out.println("Interview1");
+    }
+
+    public void go3(){
+        System.out.println("Swarn");
     }
 }

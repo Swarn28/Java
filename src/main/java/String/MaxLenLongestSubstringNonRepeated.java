@@ -1,6 +1,6 @@
 package String;
 
-public class FindLongestSubstringNonRepeated {
+public class MaxLenLongestSubstringNonRepeated {
 
     public static void main(String[] args) {
         String s = "geeksforgeeks";
