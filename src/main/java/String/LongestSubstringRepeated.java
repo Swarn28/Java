@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /*
  *
@@ -16,14 +15,22 @@ public class LongestSubstringRepeated {
 
     public static void main(String[] args) {
 
-        String s = "aabbbccccddd";
+        String s = "geeksforgeeks";
 
         HashMap<Character, Integer> charMap = new HashMap<>();
-
+        Character prev = ' ';
         for(int i=0; i<s.length(); i++){
+            if(i>0){
+            prev = s.charAt(i-1);
+            }
             Character curr = s.charAt(i);
             if(charMap.containsKey(curr)){
+                if(i>0 && prev==curr){
                 charMap.put(curr,charMap.get(curr)+1);
+                }
+                else{
+                    charMap.put(curr,1);
+                }
             }
             else{
                 charMap.put(curr,1);

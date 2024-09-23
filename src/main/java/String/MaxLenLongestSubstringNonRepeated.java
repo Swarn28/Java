@@ -3,7 +3,7 @@ package String;
 public class MaxLenLongestSubstringNonRepeated {
 
     public static void main(String[] args) {
-        String s = "geeksforgeeks";
+        String s = "aabbcdefddgga";
 
         int left=0;
         int right=0;
