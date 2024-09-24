@@ -37,12 +37,12 @@ public class PhoneBuilder {
     }
 
     public PhoneBuilder setTouchScreen(boolean touchScreen) {
-        isTouchScreen = touchScreen;
+        this.isTouchScreen = touchScreen;
         return this;
     }
 
     public PhoneBuilder setKeypad(boolean keypad) {
-        isKeypad = keypad;
+        this.isKeypad = keypad;
         return this;
     }
 
