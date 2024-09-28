@@ -15,11 +15,13 @@ public class BuySellInfiniteTransactionsAllowed {
         int lMin, lMax,result = 0;
         while(i<n){
 
+            // Find local minima
             while(i<n && arr[i] >= arr[i+1]){
                 i++;
             }
             lMin = arr[i];
 
+            //find local maxima.
             while(i<n && arr[i] <= arr[i+1]){
                 i++;
             }

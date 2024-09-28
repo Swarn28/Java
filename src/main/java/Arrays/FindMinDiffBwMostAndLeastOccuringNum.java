@@ -25,6 +25,7 @@ public class FindMinDiffBwMostAndLeastOccuringNum {
         Set<Integer> leastNums = new HashSet<>();
         Set<Integer> mostNums = new HashSet<>();
 
+        // Create a hashmap with frequency of each entry.
         for(int i=0;i<arr.length;i++){
             if(numMap.containsKey(arr[i])){
                 numMap.put(arr[i],numMap.get(arr[i])+1);
@@ -34,10 +35,13 @@ public class FindMinDiffBwMostAndLeastOccuringNum {
             }
         }
 
+        // Find the least value and most frequent value.
         Integer leastCount = numMap.values().stream().min(Integer::compareTo).get();
 
         Integer mostCount = numMap.values().stream().max(Integer::compareTo).get();
 
+        // Add the numbers having least and most frequencies in their respective lists.
+        // because there could be more than one number with the least and most frequent occurrence.
         leastNums = numMap.entrySet().stream().
                 filter(entry -> entry.getValue() == leastCount).
                 map(entry -> entry.getKey()).collect(Collectors.toSet());
@@ -66,7 +70,8 @@ public class FindMinDiffBwMostAndLeastOccuringNum {
         }
 
         last_min_found = -1;
-        //Traverse from last to start.
+        //Traverse from last to start. We are doing this because,
+        // we need to make sure we find the least distance between them
 
         for(int i = arr.length-1; i>=0; i--){
 
