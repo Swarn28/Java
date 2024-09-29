@@ -38,6 +38,7 @@ public class BeautifulString {
                 }
                 count++;
                 if (count > 3) {
+                    // THis will only be triggered when last element is a vowel.
                     if (i == str.length() - 1) {
                         for (int k = prev; k <= i; k++) {
                             eliminateList.add(k);
@@ -59,7 +60,7 @@ public class BeautifulString {
             }
         }
         System.out.println("Eliminate list is: ");
-        eliminateList.forEach(System.out::println);
+        eliminateList.forEach(System.out::print);
 
         for (int l = 0; l < str.length(); l++) {
             if (!eliminateList.contains(l)) {

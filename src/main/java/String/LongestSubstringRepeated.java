@@ -15,7 +15,8 @@ public class LongestSubstringRepeated {
 
     public static void main(String[] args) {
 
-        String s = "geeksforgeeks";
+       // String s = "geeksforgeeks";
+        String s = "aaabbbeeiioooouuu";
 
         HashMap<Character, Integer> charMap = new HashMap<>();
         Character prev = ' ';
@@ -36,8 +37,6 @@ public class LongestSubstringRepeated {
                 charMap.put(curr,1);
             }
         }
-
-
         Optional<Integer>overAllMaxCount = charMap.values().stream().
                 max(Comparator.comparingInt(Integer::intValue));
         Character maxKey= ' ';
