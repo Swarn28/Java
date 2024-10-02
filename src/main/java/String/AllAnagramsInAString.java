@@ -14,8 +14,8 @@ import java.util.Map;
 public class AllAnagramsInAString {
 
     /*public static void main(String[] args) {
-     *//*   String s = "cbaebabacdfgbca";
-        String p = "abc";*//*
+     String s = "cbaebabacdfgbca";
+        String p = "abc";
 
         String s = "BACDGABCDA";
         String p = "ABCD";
@@ -84,7 +84,7 @@ public class AllAnagramsInAString {
 
     public static void main(String[] args) {
         //Counting the number of anagrams.
-       int result = AllAnagramsInAString.search("ab","abab");
+       int result = AllAnagramsInAString.search2("ab","abab");
 
         System.out.println("Result is : " +result);
     }
@@ -121,6 +121,44 @@ public class AllAnagramsInAString {
     }
 
     public static boolean allZero(int[] counter){
+        for(int i:counter){
+            if(i!=0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int search2(String pat, String txt){
+
+        int n = txt.length();
+        int[] counter = new int[26];
+
+        for(int i=0;i<pat.length();i++){
+            char ch = pat.charAt(i);
+            counter[ch-'a']++;
+        }
+
+        int i=0, j=0, count =0;
+        int patLen = pat.length();
+
+        while(j<n){
+            counter[txt.charAt(j) - 'a']--;
+
+            if(j-i+1 == patLen){
+                if(allZero2(counter)){
+                    count++;
+                }
+                //Make current poistion of i as +1 in counter array. Then change the position of i to next char.
+                counter[txt.charAt(i) - 'a']++;
+                i++;
+            }
+            j++;
+        }
+        return count;
+    }
+
+    public static boolean allZero2(int[] counter){
         for(int i:counter){
             if(i!=0){
                 return false;
