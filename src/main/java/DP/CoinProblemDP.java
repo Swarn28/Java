@@ -28,19 +28,19 @@ public class CoinProblemDP {
         }
 
         for(int i=0; i<arr.length; i++){
-            int subSum=0;
+            int subSet=0;
 
             if(sum-arr[i] >=0){
                 if(dp[sum-arr[i]] !=0){
-                    subSum = dp[sum-arr[i]];
+                    subSet = dp[sum-arr[i]];
                 }
                 else{
-                    subSum = minCoinsDP(sum-arr[i], arr, dp);
+                    subSet = minCoinsDP(sum-arr[i], arr, dp);
                 }
             }
 
-            if(subSum + 1 < minCoins){
-                minCoins = subSum +1;
+            if(subSet + 1 < minCoins){
+                minCoins = subSet +1;
             }
         }
         dp[sum] = minCoins;
