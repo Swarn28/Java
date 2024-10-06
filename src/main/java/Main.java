@@ -1,21 +1,23 @@
 import ChildParent.ChildTwo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class Main  {
+   // private static int $;
 
     public static void main(String[] args) {
-        ChildTwo c1 = new ChildTwo(1,"Swarn");
-        ChildTwo c2 = new ChildTwo(1,"Swarn");
+            int[] arr = {6,9,8};
+            String[] strArr = {"a", "b"};
+            List<Integer> list = new ArrayList<>();
 
-        Set<ChildTwo> setChild = new HashSet<>();
+            list.add(arr[0]);
+            list.add(arr[1]);
 
-        setChild.add(c1);
-        setChild.add(c2);
-
-        System.out.println("size of set is : "+setChild.size());
+        System.out.println(list);
     }
 }
