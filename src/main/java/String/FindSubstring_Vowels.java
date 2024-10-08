@@ -11,6 +11,8 @@ package String;
  * Sequence should be maintained + all vowels should be present together
  *   https://www.youtube.com/results?search_query=leetcode+1839+problem+solution+java
  *   https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/description/
+ *
+ * This is not complete
  * */
 
 import java.util.ArrayList;

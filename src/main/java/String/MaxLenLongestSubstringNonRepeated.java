@@ -1,5 +1,10 @@
 package String;
 
+/*This is second way to find length of max non-repeated substring
+* First way is to use maxTillNow and overallMax way. That code is also present in same folder.
+*
+* */
+
 public class MaxLenLongestSubstringNonRepeated {
 
     public static void main(String[] args) {
