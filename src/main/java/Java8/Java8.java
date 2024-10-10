@@ -12,7 +12,7 @@ public class Java8 {
         String tweet = "This is an example tweet talking about java and maven.";
         System.out.println(wordList.stream().anyMatch(s->tweet.contains(s)));
 
-       long wordCount = wordList.stream().filter(s->tweet.contains(s)).count();
+        long wordCount = wordList.stream().filter(s->tweet.contains(s)).count();
         System.out.println("Word Count is: " +wordCount);
 
         /*
@@ -59,6 +59,11 @@ public class Java8 {
         System.out.println("Reverse Sorted list is");
         reverseSorted.forEach(System.out::println);
 
+        /*
+        * More on Comparators
+        * https://chatgpt.com/share/6705efcf-e720-8009-8567-083941bf3560
+        * */
+
         //Reverse sort List<Number>
         List<Integer> reverseInteger = numbers.stream().sorted(Comparator.reverseOrder()).
                                         collect(Collectors.toList());
@@ -72,6 +77,12 @@ public class Java8 {
         lengthMap.forEach((k,v) -> {
             System.out.println(k + "," + v);
         });
+
+        // taking out some values from a map using entry sets, having a value.
+        int leastCount =1;
+        Set<String> leastNums = lengthMap.entrySet().stream().
+                filter(entry -> entry.getValue() == leastCount).
+                map(entry -> entry.getKey()).collect(Collectors.toSet());
 
         // Count and group by.
         List<String> fruitList = Arrays.asList("apple","banana","apple","pears","orange","banana");
