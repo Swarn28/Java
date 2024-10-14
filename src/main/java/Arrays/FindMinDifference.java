@@ -29,7 +29,7 @@ public class FindMinDifference {
             }
 
         }
-        System.out.println("min diff is: " +minDiff);
+        System.out.println("min diff is: " +globalDiff);
         System.out.println("indexes are: " +startIdx + "," + endIdx);
 
         findMaxDiff(arr);
