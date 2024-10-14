@@ -13,6 +13,10 @@ import java.util.List;
  * if given Sum=8 and k=2. then it means you have an array of [1,2] and using that you need to return the ways
  * by which you can get 8 as sum using [1,2] like [1,1,1,1,1,1,1] , [2,2,1,1,1,1] etc...
  * we need to find all such sets.
+ *
+ * The start index plays a crucial role in:
+Ensuring that each combination is built in ascending order.
+Preventing backward selections that would create duplicate combinations in different orders.
  * */
 public class NSumProblem {
 
@@ -22,10 +26,10 @@ public class NSumProblem {
 
     public static List<List<Integer>> combinations(){
         int target = 8;
-        int[] candidates = {10,1,2,7,6,5};
+        int[] candidates = {1,2};
         List<List<Integer>> results = new ArrayList<>();
         List<Integer> subsetList = new ArrayList<>();
-        backTracking(target,0,candidates,results,subsetList);
+        backTrack2(target,0,candidates,results,subsetList);
         return results;
     }
 
@@ -56,16 +60,17 @@ public class NSumProblem {
             return;
         }
 
-        if(target ==0){
+        if(target == 0){
             results.add(new ArrayList<>(subList));
         }
 
-        for(int i = start; i<candidates.length; i++){
+        for(int i=start; i<candidates.length;i++){
             subList.add(candidates[i]);
             int newTarget = target - candidates[i];
-            backTrack2(newTarget, i,candidates,results,subList);
-            subList.remove(subList.size() - 1);
+            backTracking(newTarget, i, candidates, results,subList);
+            subList.remove(subList.size()-1);
         }
+
 
     }
 
