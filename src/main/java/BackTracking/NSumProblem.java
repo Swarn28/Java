@@ -29,7 +29,7 @@ public class NSumProblem {
         int[] candidates = {1,2};
         List<List<Integer>> results = new ArrayList<>();
         List<Integer> subsetList = new ArrayList<>();
-        backTrack2(target,0,candidates,results,subsetList);
+        backTracking(target,0,candidates,results,subsetList);
         return results;
     }
 
@@ -37,12 +37,16 @@ public class NSumProblem {
     public static void backTracking(int target, int start, int[] candidates,
                                     List<List<Integer>> results, List<Integer> subsetList){
 
+       // Condition to ignore that element.
         if(target <0){
             return;
         }
+        // condition to add that elements into the result.
         if(target == 0){
             results.add(new ArrayList(subsetList));
         }
+
+        // traversing the elements.
         for(int i= start; i<candidates.length; i++){
             subsetList.add(candidates[i]);
             int newTarget = target - candidates[i];

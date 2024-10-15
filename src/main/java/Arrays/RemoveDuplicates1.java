@@ -1,7 +1,7 @@
 package Arrays;
 
 public class RemoveDuplicates1 {
-
+ // Not important....
     /*GIven array with consecutive duplicates, remove the duplicates and return the array.*/
     public static void main(String[] args) {
         int [] arr = {1,2,2,3,3,4,5,5,5,6,7};

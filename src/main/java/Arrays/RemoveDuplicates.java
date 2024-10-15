@@ -9,7 +9,8 @@ import java.util.HashSet;
 public class RemoveDuplicates {
 
     public static void main(String[] args) {
-        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+       // int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        int[] nums = {1,2,2,3,3,4,5,5,5,6,7};
         int i=0,j=0,prev=0;
 
         prev = nums[0];
