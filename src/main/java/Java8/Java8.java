@@ -78,7 +78,7 @@ public class Java8 {
             System.out.println(k + "," + v);
         });
 
-        // taking out some values from a map using entry sets, having a value.
+        // taking out some keys from a map using entry sets, having a value.
         int leastCount =1;
         Set<String> leastNums = lengthMap.entrySet().stream().
                 filter(entry -> entry.getValue() == leastCount).
