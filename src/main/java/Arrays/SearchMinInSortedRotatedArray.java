@@ -4,7 +4,7 @@ package Arrays;
 /*
 * https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/
 *
-*
+*https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 *
 * */
 public class SearchMinInSortedRotatedArray {
