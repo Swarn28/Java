@@ -11,9 +11,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class SubSetProblem {
 
     public static void main(String[] args) {
-//Iterativeapproach();
+//IterativeApproach();
         int[] arr = {1,2,3};
-        List<List<Integer>> resultList = new CopyOnWriteArrayList<>();
+        List<List<Integer>> resultList = new ArrayList<>();
         backTrackingSubset(0,arr,new ArrayList<>(), resultList);
         System.out.println(resultList);
 
@@ -30,7 +30,8 @@ public class SubSetProblem {
         }
     }
 
-    private static void Iterativeapproach() {
+    // Iterative approach using queues.
+    private static void IterativeApproach() {
         int[] arr = {1,2,3};
         List<List<Integer>> resultList = new CopyOnWriteArrayList<>();
         resultList.add(new ArrayList<>());

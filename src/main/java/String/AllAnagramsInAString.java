@@ -134,6 +134,7 @@ public class AllAnagramsInAString {
         int n = txt.length();
         int[] counter = new int[26];
 
+        // Create frequency array of the pattern.
         for(int i=0;i<pat.length();i++){
             char ch = pat.charAt(i);
             counter[ch-'a']++;
@@ -144,7 +145,8 @@ public class AllAnagramsInAString {
 
         while(j<n){
             counter[txt.charAt(j) - 'a']--;
-
+            /* j-i+1 is the formulae to find the current size of window. Whenever window size is equal to pattern length
+             We will check if all are zeroes in the frequency map. If yes then we have found the pattern.*/
             if(j-i+1 == patLen){
                 if(allZero2(counter)){
                     count++;

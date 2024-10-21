@@ -10,7 +10,7 @@ package Arrays;
 public class SearchMinInSortedRotatedArray {
 
     public static void main(String[] args) {
-        int[] arr = {3,1,2};
+        int[] arr = {3,4,5,1,2};
         int min = findMin(arr,0,arr.length-1);
         System.out.println("min is: "+min);
 
@@ -27,12 +27,13 @@ public class SearchMinInSortedRotatedArray {
                // return min;
             }
 
-            // look for sorted array.
+            // look for sorted array which side array is sorted.
 
             //left half is sorted
             if(arr[low] <= arr[mid]){
                 if(arr[low] <= min){
                     min = arr[low];
+                    // we looked into first sorted half, now look into other half, compare with it's low.
                     low = mid+1;
                 }else{
                     low = mid+1;
