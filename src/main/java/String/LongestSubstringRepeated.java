@@ -16,7 +16,7 @@ public class LongestSubstringRepeated {
     public static void main(String[] args) {
 
        // String s = "geeksforgeeks";
-        String s = "aaabbbeeiioooouuu";
+        String s = "aaaooobbbeeiioooouuu";
 
         HashMap<Character, Integer> charMap = new HashMap<>();
         Character prev = ' ';

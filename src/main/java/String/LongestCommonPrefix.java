@@ -14,9 +14,9 @@ import java.util.Arrays;
 public class LongestCommonPrefix{
 
     public static void main(String[] args) {
-        //String[] str = {"geeksforgeeks","geeks","geek","geezer"};
+        String[] str = {"geeksforgeeks","geeks","geek","geezer"};
 
-        String[] str = {"flower","flow","flew","flock"};
+      //  String[] str = {"flower","flow","flew","flock"};
 
        // String[] str = {"abbc","aabcbcd","acdsgbcds"};
 

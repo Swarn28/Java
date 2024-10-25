@@ -15,7 +15,7 @@ public class MaxLenLongestSubstringNonRepeated {
         int maxLength=0;
         boolean[] visited = new boolean[256];
 
-        while(right<s.length()){
+        while(right < s.length()) {
 
             while(visited[s.charAt(right)]){
                 visited[s.charAt(left)] = false;

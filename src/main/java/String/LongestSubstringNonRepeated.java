@@ -10,8 +10,6 @@ class LongestSubstringNonRepeated
 
         HashSet<Character> strSet = new HashSet<>();
 
-        int pointer=0;
-
         StringBuilder maxTillNow = new StringBuilder();
         StringBuilder overallMax = new StringBuilder();
 
