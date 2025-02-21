@@ -23,4 +23,20 @@ public class LinkedList {
             temp= temp.next;
         }
     }
+
+    public int totalLength(Node head){
+        Node curr = head;
+        int len =0;
+
+        if(head ==null){
+            return 0;
+        }
+
+        while(curr !=null){
+            curr = curr.next;
+            len++;
+        }
+
+        return len;
+    }
 }

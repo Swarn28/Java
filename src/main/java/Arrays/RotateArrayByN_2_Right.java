@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class RotateArrayByN_2_Right {
 
     /*
-    * It can be a rotate right by K or it could be rotate left by K. Both will be different.
+    * It can be rotate right by K or it could be rotate left by K. Both will be different.
     *
     * For Rotate right:
     *   step 1-> Reverse last K elements. Do this using the same array. Take 2 pointers i and j
@@ -20,8 +20,8 @@ public class RotateArrayByN_2_Right {
     * */
 
     public static void main(String[] args) {
-       // int[] arr = {1,2,3,4,5,6,7};
-        int[] arr = {-1,-100,3,99};
+        int[] arr = {1,2,3,4,5,6,7};
+        //int[] arr = {-1,-100,3,99};
         //int[] newArr = new int[arr.length];
         int n = arr.length;
         int k=2;
