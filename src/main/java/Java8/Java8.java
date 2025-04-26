@@ -8,12 +8,16 @@ import java.util.stream.IntStream;
 public class Java8 {
 
     public static void main(String[] args) {
-        List<String> wordList = Arrays.asList("java", "jdk", "spring", "maven");
+        List<String> wordList = Arrays.asList("java", "jdk", "spring", "springBoot");
         String tweet = "This is an example tweet talking about java and maven.";
         System.out.println(wordList.stream().anyMatch(s->tweet.contains(s)));
 
         long wordCount = wordList.stream().filter(s->tweet.contains(s)).count();
         System.out.println("Word Count is: " +wordCount);
+
+        // Find word with max length in a list of strings.
+        String mxString = wordList.stream().max(Comparator.comparing(String::length)).get();
+        System.out.println("maxString is: "+mxString);
 
         /*
         * Java 8 practice questions
