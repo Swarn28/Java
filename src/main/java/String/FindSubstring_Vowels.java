@@ -15,57 +15,67 @@ package String;
  * This is not complete
  * */
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FindSubstring_Vowels {
+    static Map<Character, Integer> countMap;
 
     public static void main(String[] args) {
-        String s = "aaeeaaeeiioouuaeiuoouuiiaeiuo";
-        String vowels = "aeiou";
-        int count = 0;
+        countMap = new HashMap<>();
+        String word = "eiuoa";
+        countMap.put('a',1);
+        countMap.put('e',1);
+        countMap.put('i',1);
+        countMap.put('o',1);
+        countMap.put('u',1);
 
-        char[] s_Char = s.toCharArray();
-        char[] vowels_char = vowels.toCharArray();
+        boolean result = validateBeautifulString(word);
+        System.out.println("Result is : " +result);
 
-        List<Integer> a_pos = new ArrayList<>();
+    }
 
-        // Store the positions of 'a'.
-        for (int i = 0; i < s_Char.length; i++) {
-            if (s_Char[i] == 'a') {
-                a_pos.add(i);
+    public static boolean validateBeautifulString(String word){
+
+        boolean isOnce = countAtleastOnce(word);
+        boolean isSorted = followsVowelSequence(word);
+
+       return isOnce && isSorted;
+    }
+
+    public static boolean followsVowelSequence(String str) {
+        if (str.isEmpty()) return true; // ✅ Edge case: Empty string is valid
+        if (str.length() == 1) return true; // ✅ Single vowel is always valid
+
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'}; // Ordered vowels
+        int vowelIndex = 0; // Points to the required vowel in sequence
+
+        for (char ch : str.toCharArray()) {
+            if (ch == vowels[vowelIndex]) {
+                continue; // ✅ Correct vowel, continue checking
+            } else if (vowelIndex < vowels.length - 1 && ch == vowels[vowelIndex + 1]) {
+                vowelIndex++; // ✅ Move to the next vowel in order
+            } else {
+                return false; // ❌
+            }
+        }
+        return true;
+    }
+
+    private static boolean countAtleastOnce(String word) {
+
+        for(int i=0;i<word.length();i++){
+            char curr = word.charAt(i);
+
+            if(countMap.containsKey(curr)){
+                countMap.put(curr, countMap.get(curr)-1);
             }
         }
 
-        Set<Character> viewedSet = new HashSet<>();
-        int i = 0;
-        char prev = 'a';
-        for (int pos : a_pos) {
-            count = 0;
-            for (int j = pos, k = 0; j < s_Char.length & k < vowels_char.length; j++) {
-
-                if (s_Char[j] == vowels_char[k] || s_Char[j] == vowels_char[k + 1]) {
-                    count++;
-                }
-                if (prev != s_Char[j]) {
-                    k++;
-                }
-
-                prev = s_Char[j];
-
-           /* if(viewedSet.contains(s_Char[pos]) && s_Char[pos]!='a'){
-                viewedSet.add(s_Char[k-1]);
-            }
-            if(s_Char[pos] == vowels_char[i] || s_Char[pos] == vowels_char[i+1] ){
-                viewedSet.add(s_Char[pos]);
-                count++;
-                k++;*/
-            }
-            //  }
+        if(countMap.containsValue(1)){
+            return false;
+        }else{
+            return true;
         }
-
 
     }
 
