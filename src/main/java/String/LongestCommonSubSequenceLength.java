@@ -51,8 +51,8 @@ public class LongestCommonSubSequenceLength {
     }*/
 
     // TODO: bottom-up iterative approach. Leetcode approves this only, and not the recursive approach.
-    /*TODO: we use for loops starting with 1 because in the temp array which is a 2d array, all the indcies where we have
-    * even a single 0 in i or j, that inidci should be 0 be defaut. Because among two string in one os string is 0 or empty then we
+    /*TODO: we use for loops starting with 1 because in the temp array which is a 2d array, all the indicies where we have
+    * even a single 0 in i or j, that inidci should be 0 be defaut. Because among two string in one of string is 0 or empty then we
     * return result as 0.
     * */
     public static int solve(String s1,String s2, int is, int js,int[][] temp,int m,int n){
