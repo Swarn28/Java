@@ -1,6 +1,8 @@
 package String;// Java program to find
 // and print longest substring
 // without repeating characters.
+// Sliding window solution at
+// https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/#consider-all-substrings-and-check-using-window-sliding-on2-time
 import java.util.*;
 class LongestSubstringNonRepeated
 {
