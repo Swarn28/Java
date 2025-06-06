@@ -5,7 +5,7 @@ package String;
 *
 * */
 
-public class MaxLenLongestSubstringNonRepeated {
+public class NonRepeatedSubstrMaxLen {
 
     public static void main(String[] args) {
         String s = "aabbcdefddgga";
